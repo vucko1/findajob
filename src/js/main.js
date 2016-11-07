@@ -1,8 +1,9 @@
-﻿HTMLElement.prototype.removeClass = function(remove) {
+﻿// HTML DOM element members (expand the DOM API with basic functions since we're not allowed to use jQuery :). )
+HTMLElement.prototype.removeClass = function (remove) {
     var newClassName = "";
     var i;
     var classes = this.className.split(" ");
-    for(i = 0; i < classes.length; i++) {
+    for (i = 0; i < classes.length; i++) {
         if(classes[i] !== remove) {
             newClassName += classes[i] + " ";
         }

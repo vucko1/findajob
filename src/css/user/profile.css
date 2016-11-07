@@ -65,8 +65,7 @@
 }
 
 /*Custom styles for each field*/
-input[type=date]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+input[type=date] {
     display: none;
 }
 
@@ -76,14 +75,6 @@ input[type=date]::-webkit-inner-spin-button {
 
 input[type=password] {
     width: 120px;
-}
-
-input:invalid {
-    outline: 2px solid #fc6666;
-}
-
-input:focus:invalid {
-    color: #ea2c2c;
 }
 
 input {

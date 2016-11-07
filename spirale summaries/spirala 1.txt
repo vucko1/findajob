@@ -1,10 +1,11 @@
-Spirala 1 - Summary
+﻿Spirala 1 - Summary
 
 --------------------------------------------------------
 
 a- Napravite skicu kako bi svaka od podstranica (min 5 npr O nama, Usluge i sl.) trebala izgledati u alatu po želji (neki od alata za mockup, Paint, nacrtati rukom pa skenirati i sl.) [1 bod]
 
-	- Mockovi su urađeni i nalaze se u folderu "mocks", kategorizirane u desktop i mobile folderima.
+	- Mockovi su urađeni i nalaze se u folderu "mocks".
+	- Mobile i desktop screenovi su poprilično isti pa sam naglasio detalje: u job openings kartice se redaju jedna za drugom; u profilu je prikazano stackovanje boxova na manjim rezolucijama; također je prikazan meni na manjim rezolucijama
 	
 b- Sve stranice trebaju biti responzivne i imati grid-view izgled [2 boda]
 
