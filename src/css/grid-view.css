@@ -1,0 +1,29 @@
+.row {
+	width:100%;
+	float:left;
+	min-height: 1px;
+}
+
+.col {
+	display: inline-block;
+	float: left;
+	min-height: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.col.col-4 {
+	width: 94%;    
+}
+
+.col.col-3 {
+	width: 74%;
+}
+
+.col.col-2 {
+	width: 46%;
+}
+
+.col.col-1 {
+	width: 22%;
+}

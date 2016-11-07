@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+
+    <title>Find a Job - My Profile</title>
+    <script src="https://use.fontawesome.com/853d20610c.js"></script>
+
+    <link href="../css/nav.css" rel="stylesheet" />
+    <link href="../css/grid-view.css" rel="stylesheet" />
+    <link href="../css/user/profile.css" rel="stylesheet" />
+    <script src="../js/main.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <nav class="sidenav">
+        <div class="ph-menu-header">
+            <div class="ph-menu-page-title">Find a job - Search companies</div>
+            <div class="ph-menu-collapse-expand" onclick="collapseExpand();"><i aria-hidden="true" class="fa fa-lg fa-bars"></i></div>
+        </div>
+
+        <div class="userinfo">
+            <img src="../img/defaultuser.png" class="userimage img-circle" alt="Profile picture" />
+            <span class="username">Mirza Vucijak</span>
+        </div>
+
+        <ul class="menu-list" data-expanded="false">
+            <li class="activePage"><i class="fa fa-user" aria-hidden="true"></i><a href="./profile.html">My profile</a></li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i><a href="../index.html">Job openings</a></li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i><a href="./companies.html">Search companies</a></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i><a>Bookmarks</a></li>
+            <li><i class="fa fa-sign-out" aria-hidden="true"></i><a>Log out</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <div class="profile-containers">
+            <div class="profile-basicinfo profile-container">
+                <div class="profile-container-title">Basic info</div>
+
+                <div class="profile-container-content">
+
+                    <div class="col col-2 labels">
+                        <div class="required-field">First name </div>
+                        <div class="required-field">Last name </div>
+                        <div class="required-field">Date of birth </div>
+                        <div class="required-field">Gender </div>
+                        <div>Country </div>
+                        <div>City </div>
+                        <div class="required-field">Email </div>
+                        <div>Profile picture </div>
+                    </div>
+
+                    <div class="col col-2 inputs">
+                        <input class="profile-control" type="text" id="pc-firstname" />
+                        <input class="profile-control" type="text" id="pc-lastname" />
+                        <input class="profile-control" type="date" id="pc-dateofbirth" />
+
+                        <div class="profile-control">
+                            <form id="pc-gender">
+                                <input type="radio" name="gender" value="male"> Male
+                                <input type="radio" name="gender" value="female"> Female
+                            </form>
+                        </div>
+
+                        <input class="profile-control" type="text" id="pc-country" />
+                        <input class="profile-control" type="text" id="pc-city" />
+                        <input class="profile-control" type="text" id="pc-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+
+                        <form id="pc-profilepic">
+                            <input type="file" name="profilepic" accept="image/*" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-professioninfo profile-container">
+                <div class="profile-container-title">Profession</div>
+
+                <div class="profile-container-content">
+
+                    <div class="col col-2 labels">
+                        <div>College </div>
+                        <div class="required-field">Graduation year </div>
+                        <div>Title </div>
+                        <div class="required-field">I'm currently </div>
+                        <div class="required-field">Profession </div>
+                    </div>
+
+                    <div class="col col-2 inputs">
+
+                        <input class="profile-control" type="text" id="pc-college" />
+                        <input class="profile-control" type="number" id="pc-graduationyear" min="1900" max="2100" placeholder="2016" />
+                        <input class="profile-control" type="text" id="pc-title" />
+                        <select class="profile-control" id="pc-currentstatus">
+                            <option>Student</option>
+                            <option>Employed</option>
+                            <option>Unemployed, looking for a job</option>
+                            <option>Employed, but weighning my options</option>
+                        </select>
+                        <input class="profile-control" type="text" id="pc-profession" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="profile-passwordinfo profile-container">
+                <div class="profile-container-title">Password</div>
+
+                <div class="profile-container-content">
+
+                    <div class="col col-2 labels">
+                        <div class="required-field">Old password </div>
+                        <div>New password </div>
+                        <div>Repeat new pasword </div>
+                    </div>
+
+                    <div class="col col-2 inputs">
+                        <input class="profile-control" type="password" id="pc-oldpassword" />
+                        <input class="profile-control" type="password" id="pc-newpassword" />
+                        <input class="profile-control" type="password" id="pc-repeatnewpassword" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row profile-skillsetinfo profile-container">
+                <div class="profile-container-title">Skillset and resume</div>
+
+                <div class="profile-container-content">
+
+                    <div class="col col-2 labels">
+                        <div class="required-field">Resume </div>
+                    </div>
+
+                    <div class="col col-2 inputs">
+                        <input type="file" name="upload" accept="application/pdf,application/vnd.ms-excel" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

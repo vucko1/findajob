@@ -1,0 +1,44 @@
+Spirala 1 - Summary
+
+--------------------------------------------------------
+
+a- Napravite skicu kako bi svaka od podstranica (min 5 npr O nama, Usluge i sl.) trebala izgledati u alatu po želji (neki od alata za mockup, Paint, nacrtati rukom pa skenirati i sl.) [1 bod]
+
+	- Mockovi su urađeni i nalaze se u folderu "mocks", kategorizirane u desktop i mobile folderima.
+	
+b- Sve stranice trebaju biti responzivne i imati grid-view izgled [2 boda]
+
+	- grid view korišten u pojedinim dijelovima stranice. Obzirom da mi se stranica zasniva na "karticama", grid-view na potpunoj stranici baš ne odgovara, ali je iskorišten za 
+	grupisanje/kategorizaciju pojedinih elemenata (npr. labele i inputi na profilu i slično)
+	
+c- Napravite da postoji izgled za mobilne uređaje koristeći media query-e (Uraditi i dio pod a) [1.5 boda]
+
+	- Popup na gridu se uvijek nalazi na sredini ekrana. Boxovi na profilu se stackaju jedan ispod drugog, kao i poslovi na "search jobs" stranici. Grid na "companies" stranici se adaptira, ali obzirom da je grid ne mogu u potpunosti smanjiti sadržaj :)
+	- U slučaju manje rezolucije (za mobitel/manji screen) meni se nalazi na vrhu stranice te se može collapse/expand.
+	
+d- Potrebno je implementirati nekoliko html formi (min 3) [2 boda]
+
+	- Implementirane stranice profile, companies i search jobs.
+	- Preostaju još stranice:
+		> Za usera - bookmarks - stranica identična search for jobs, u potpunosti identična.
+				   - skills dio na profilu - u obliku popupa, ali mi treba neki backend da nastavim to da radim.
+		> Za employera - profile - sličan userovom profilu, samo druge opcije
+					   - users - sličan userovoj stranici "companies", samo lista usera sa odgovarajućim podacima
+					   - submit a job - kreiranje poslova, klasična forma
+	
+	- Sve su stranice slične postojećim pa ću tokom semestra završavati jednu za drugom. Ići će brže uz backend, svakako.
+	
+	- Notes:
+		- klikom na grid pokazuje se description stranice. Potreban backend za "kako treba" podatke, trenutno samo dummy
+		- profil neće imati fill-a-form tip upisa, nego će imati real-time save. Nakon userovog editovanja odmah se informacije spašavaju. Potrebno je obavijestiti usera kada se nešto spasi, što će biti urađeno nakon backenda. 
+		- na search jobs stranici ne radi se ništa spektakularno. Biti će urađeno da klik na "karticu" otvara popup sa apply dugmetom na posao, vrlo jednostavno, te će klik na zvijezdu spašavati/brisati iz bookmarks tj. favourite jobs.
+		- filter je potrebno implementirati kada se implementira backend, nemam šta filterisati bez backenda, ovako je sve hardkodirano. 
+		- postojaće login koji će usera voditi na "search jobs" page. Nema smisla bez backenda kreirati ovo iako ću uz sljedeću spiralu napraviti dummy login da sve stranice budu razdvojene gdje trebaju biti (trenutni index će biti "searchjobs" stranica, a tu će biti login)
+		
+e- Potrebno je osmisliti i implementirati meni web stranice (ne mora biti padajući dovoljno je da budu linkovi na sve podstranice) koji treba biti vidljiv na svim podstranicama [1 bod]
+
+	- Urađeno (i za > 900px i za < 900px stranice)
+
+f- Izgled stranice treba biti konzistentan, bez glitcheva, elementi na stranici trebaju biti poravnati [2.5 boda]
+
+	- Urađeno.

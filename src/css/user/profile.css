@@ -1,0 +1,112 @@
+.profile-containers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-between;
+    padding-top: 7%;
+}
+
+@media only screen and (max-width: 900px) {
+    .profile-containers {
+        flex-flow: column wrap;
+        padding-top: 0%;
+    }
+
+   .profile-container {
+        width: 100% !important;
+    }
+}
+
+.profile-container {
+    width: 40%;
+    box-shadow: 4px 6px 5px -2px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding-bottom: 2%;
+    border: 1px solid #CCC;
+    margin-bottom: 2%;
+    height: 100%;
+}
+
+.profile-container-title {
+    font-size: 22px;
+    padding-left: 5px;
+    border-bottom: 1px solid #666;
+}
+
+.profile-control {
+    display: block;
+    color: #444444;
+}
+
+.labels {
+    text-align: right;
+    margin-left: 0% !important;
+    width: 36% !important;
+}
+
+.inputs {
+    text-align: left;
+    margin-left: 0% !important;
+    width: 46% !important;
+}
+
+.labels div, .inputs .profile-control {
+    margin-top: 4px;
+}
+
+.profile-container-content {
+    margin-top: 2%;
+}
+
+.required-field::after {
+   color: #e32;
+    content: '*';
+    display:inline;
+}
+
+/*Custom styles for each field*/
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+#pc-graduationyear {
+    width: 47px;
+}
+
+input[type=password] {
+    width: 120px;
+}
+
+input:invalid {
+    outline: 2px solid #fc6666;
+}
+
+input:focus:invalid {
+    color: #ea2c2c;
+}
+
+input {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+input:not([type='radio']) {
+    width: 100%;
+}
+
+#pc-gender input:nth-child(2) {
+    margin-left: 15px;
+}
+
+#pc-gender {
+    height: 17px;
+}
+
+input[type=file] {
+    margin-top: 3px;
+}
+
+#pc-currentstatus {
+    width: 100%;
+}

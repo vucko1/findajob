@@ -1,0 +1,147 @@
+/* Job card styles */
+.job-card {
+    padding-top: .1px; /* z-index of a star gets messed up if no padding, because of relative/absolute trickery :) */
+    width: 250px;
+    min-width: 250px;
+    height: 250px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.job-card .circle-background {
+    color: #E81D62;
+    text-shadow: 1px 2px 2px #111;
+}
+
+.job-star .starred,
+.job-star .not-starred {
+    color: white;
+}
+
+.not-starred:before { content: "\f006"; }       /* Avoid using fa-star and fa-star-o */
+.starred:before { content: "\f005"; }   /* Use "content" of "before" so we can use "addClass(starred)" in JS instead of adding "fa-star" */
+
+.job-star .starred:hover,
+.job-star .not-starred:hover{
+    cursor: pointer;
+}
+
+.job-star:hover {
+    cursor: pointer;
+}
+
+.job-star:hover .not-starred:before {
+    content: "\f005";
+}
+
+.job-star:hover .starred:before {
+    content: "\f006";
+}
+
+.job-star {
+    z-index: 999;
+    margin-left: 75%;
+    position: absolute;
+}
+
+/* Job info styles */
+
+.job-info {
+    position: relative;
+    background: url(../../img/api.jpg) center no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-top: 10%;
+    height: 90%;
+    box-shadow: 2px 5px 7px -1px rgba(0, 0, 0, 0.6);
+    transition: background-color 1s;
+}
+
+.job-info:before {
+  filter: blur(5px);
+}
+
+.job-info:hover {
+    cursor: pointer;
+}
+
+.job-employer {
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2%;
+    border-bottom: 1px solid #269DD1;
+    height: 10%;
+    transition: background-color 1s;
+}
+
+
+.job-title {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    width: 98%;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    padding: 5px 0px 5px 2%;
+    border-top: 1px solid #269DD1;
+    position: absolute;
+    bottom: 0%;
+    transition: bottom .6s ease-out .1s, background-color .8s;
+}
+
+.job-description {
+    position: absolute;
+    bottom: -15%;
+    font-size: 12px;
+    color: #DDD;
+    opacity: 0;
+    display: inline-block;
+    text-decoration: none;
+    transition: bottom .3s ease-out .1s, opacity .4s ease-out .1s, color, background-color .1s;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 1%;
+    width: 98%;
+    border-top: 1px solid #269DD1;
+    word-wrap: break-word;
+    max-height: 170px;
+}
+
+.job-info:hover .job-employer,
+.job-info:hover .job-title,
+.job-info:hover .job-description {
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.job-info:hover .job-employer {
+    transition: background-color 1s;
+}
+
+.job-info:hover .job-title {
+    bottom: 68.5%;
+    transition: bottom .6s ease-out .1s, background-color .8s;
+}
+
+.job-info:hover .job-description {
+    color: white;
+    background-color: rgba(0, 0, 0, .8);
+    opacity: 1;
+    bottom: 0%;
+    transition: bottom .5s ease-out .1s, opacity 1s ease-out .1s, color .2s, background-color .1s;
+}
+
+.job-cards {
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+    display: flex !important;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+}
+
+.job-filters {
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+}
