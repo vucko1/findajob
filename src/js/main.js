@@ -1,4 +1,9 @@
-﻿// HTML DOM element members (expand the DOM API with basic functions since we're not allowed to use jQuery :). )
+window.onload = function() {
+    // redirect to job openings on init
+    FJ.Navigation.NavigateToRoute(FJ.Navigation.Routes.User.JobOpenings);
+}
+
+// HTML DOM element members (expand the DOM API with basic functions since we're not allowed to use jQuery :). )
 HTMLElement.prototype.removeClass = function (remove) {
     var newClassName = "";
     var i;
@@ -9,6 +14,10 @@ HTMLElement.prototype.removeClass = function (remove) {
         }
     }
     this.className = newClassName;
+}
+
+HTMLElement.prototype.addClass = function (className) {
+    this.className += ' ' + className;
 }
 
 function collapseExpand() {
@@ -23,4 +32,8 @@ function collapseExpand() {
         menu.className += ' menu-list-expanded';
         menu.setAttribute('data-expanded', 'true');
     }
+}
+
+function logout() {
+    window.location.pathname = "/login.html"
 }

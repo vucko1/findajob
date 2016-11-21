@@ -1,106 +1,72 @@
-<!DOCTYPE html>
-<head>
+<div class="col col-4">
+    <table id="companies">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Place</th>
+                <th>Main orientation</th>
+                <th># employees</th>
+                <th># job openings</th>
+                <th class="description-column"></th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <title>Find a Job - My Profile</title>
-    <script src="https://use.fontawesome.com/853d20610c.js"></script>
+            <tr onclick="vm.openCompanyPopup(0)">
+                <td>Authority Partners</td>
+                <td>Bosnia and Herzegovina, USA</td>
+                <td>Software consulting</td>
+                <td>> 250</td>
+                <td>6</td>
+                <td class="description"> AUTHORITY PARTNERS DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
+            </tr>
 
-    <link href="../css/nav.css" rel="stylesheet" />
-    <link href="../css/grid-view.css" rel="stylesheet" />
-    <link href="../css/user/companies.css" rel="stylesheet" />
-    <link href="../css/popup.css" rel="stylesheet" />
+            <tr onclick="vm.openCompanyPopup(1)">
+                <td>Microsoft BA</td>
+                <td>Bosnia and Herzegovina</td>
+                <td>Hardware, Software, OS, Cloud Computing</td>
+                <td>> 10k</td>
+                <td>0</td>
+                <td class="description">MICROSOFT DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
 
-    <script src="../js/user/companies.js" type="application/javascript"></script>
-    <script src="../js/main.js" type="text/javascript"></script>
-</head>
-<body>
+            </tr>
 
-    <nav class="sidenav">
-        <div class="ph-menu-header">
-            <div class="ph-menu-page-title">Find a job - Search companies</div>
-            <div class="ph-menu-collapse-expand" onclick="collapseExpand();"><i aria-hidden="true" class="fa fa-lg fa-bars"></i></div>
-        </div>
+            <tr onclick="vm.openCompanyPopup(2)">
+                <td>Apple</td>
+                <td>Bosnia and Herzegovina, USA</td>
+                <td>Software consulting</td>
+                <td>> 10k</td>
+                <td>1</td>
+                <td class="description">APPLE DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
+            </tr>
 
-        <div class="userinfo">
-            <img src="../img/defaultuser.png" class="userimage img-circle" alt="Profile picture" />
-            <span class="username">Mirza Vucijak</span>
-        </div>
+            <tr onclick="vm.openCompanyPopup(3)">
+                <td>Konzum</td>
+                <td>Bosnia and Herzegovina, Croatia, Serbia</td>
+                <td>Software consulting</td>
+                <td>> 200</td>
+                <td>3</td>
+                <td class="description">KONZUM DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-        <ul class="menu-list" data-expanded="false">
-            <li><i class="fa fa-user" aria-hidden="true"></i><a href="./profile.html">My profile</a></li>
-            <li><i class="fa fa-briefcase" aria-hidden="true"></i><a href="../index.html">Job openings</a></li>
-            <li class="activePage"><i class="fa fa-briefcase" aria-hidden="true"></i><a href="./companies.html">Search companies</a></li>
-            <li><i class="fa fa-star" aria-hidden="true"></i><a>Bookmarks</a></li>
-            <li><i class="fa fa-sign-out" aria-hidden="true"></i><a>Log out</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-
-        <div class="col col-4">
-            <table id="companies">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Place</th>
-                        <th>Main orientation</th>
-                        <th># employees</th>
-                        <th># job openings</th>
-						<th class="description-column"></th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr onclick="openCompanyPopup(0)">
-                        <td>Authority Partners</td>
-                        <td>Bosnia and Herzegovina, USA</td>
-                        <td>Software consulting</td>
-                        <td>> 250</td>
-                        <td>6</td>
-                        <td class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
-                    </tr>
-
-                    <tr onclick="openCompanyPopup(1)">
-                        <td>Microsoft BA</td>
-                        <td>Bosnia and Herzegovina</td>
-                        <td>Hardware, Software, OS, Cloud Computing</td>
-                        <td>> 10k</td>
-                        <td>0</td>
-                        <td class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
-
-                    </tr>
-
-                    <tr onclick="openCompanyPopup(2)">
-                        <td>Apple</td>
-                        <td>Bosnia and Herzegovina, USA</td>
-                        <td>Software consulting</td>
-                        <td>> 10k</td>
-                        <td>1</td>
-                        <td class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
-                    </tr>
-
-                    <tr onclick="openCompanyPopup(3)">
-                        <td>Konzum</td>
-                        <td>Bosnia and Herzegovina, Croatia, Serbia</td>
-                        <td>Software consulting</td>
-                        <td>> 200</td>
-                        <td>3</td>
-                        <td class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus quis odio quis scelerisque. Praesent aliquet id nisi in condimentum. Suspendisse mi est, tincidunt a pharetra ac, lacinia quis lacus. Proin pellentesque leo ut feugiat malesuada. Donec et fringilla nibh. In ultricies tempus quam vel pharetra. Nulla eu lorem non diam vestibulum scelerisque id et dui. Sed a euismod ligula, non pulvinar elit. In nec porta ligula. Ut elit ante, pretium eu dui id, faucibus gravida dolor. Etiam id vulputate ligula. Praesent ac tincidunt quam, ac dignissim lorem.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
+<div id="popup-wrapper" class="overlay">
+    <div class="popup-carousel-arrow popup-carousel-arrow-left" onclick="vm.carouselGoLeft()">
+        <i class="fa fa-angle-left arrow" aria-hidden="true"></i>
     </div>
+    
+    <div class="popup">
+        <h2>Authority Partners</h2>
+        <a class="close" href="#">&times;</a>
 
+        <div class="content">
 
-    <div id="popup-wrapper" class="overlay">
-        <div class="popup">
-            <h2>Authority Partners</h2>
-            <a class="close" href="#">&times;</a>
-
-            <div class="content">
-
-            </div>
         </div>
     </div>
-</body>
+    
+    <div class="popup-carousel-arrow popup-carousel-arrow-right" onclick="vm.carouselGoRight()">
+        <i class="fa fa-angle-right arrow" aria-hidden="true"></i>
+    </div>
+</div>

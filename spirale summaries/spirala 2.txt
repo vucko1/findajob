@@ -1,0 +1,69 @@
+Spirala 1 - Summary
+
+--------------------------------------------------------
+
+a) SVA polja formi trebaju imati JavaScript validaciju, 
+nevalidan unos onemogućava submit i ispisuje odgovarajuću poruku koja treba biti dovoljna korisniku da može ispraviti svoju grešku, 
+za ispisivanje poruke izbjegavati alert već prikazivati poruku o grešci u sklopu stranice (pored nevalidnog polja, iznad submit dubmeta i sl.) 3B
+
+	Urađeno na stranici Profile, klikom na save izaći će poruke ako neko polje nije validno.
+	
+b) Koristeći JavaScript implementirati neke od sljedećih funkcionalnosti tako da u zbiru nose 4 boda, priznavat će se samo 100% vlastiti kod bez biblioteka i max 4 boda:
+- Dropdown meni [1B]
+- Meni u vidu stabla [1B]
+- Carousel [2B] http://www.ajaxshake.com/public/usersFiles/main/prototype-carousel-0006_user_1_8375f.jpg
+- Galerija slika sa opcijom da se na klik slika raširi preko cijelog ekrana, a na escape da se vrati pogled nazad na galeriju [3B]
+- Koristeći localstorage spasiti posljednji unos sa forme i prikazati ga pri ponovnom učitavanju stranice [2B]
+
+	- Urađen localstorage na loginu (otvorite prvo login, ukucati username i password i checkirati remember me. U slučaju logovanja bez checkiranog remember me, briše se item iz local storagea).
+	- Urađen carousel ali ne u vidu carousela slike nego kompanija. Nemam mjesto na stranici za galeriju nekih slika, pa kada se ode na stranicu "Companies" i klikne na red u tabeli otvoriće se popup sa detaljima kompanije, što je urađeno u prethodnom sprintu, a sada je dodan carousel na te kompanije.
+	- Kao što sam spomenuo maloprije, nemam mjesto za galeriju ali je urađeno na profilu kada se uploaduje slika i pritisne expand ikona, otvoriće se fullscreen slika. Na escape se ugasi.
+	- Carousel i galeriju sa velikom slikom sam ukomponovao u jedno, jer stvarno nemam gdje da ubacim galeriju pa se nadam da će biti shodno tome bodovano :)
+	
+c) Koristeći Ajax napraviti da se podstranice učitavaju bez reload-a cijele stranice, već da se samo sadržaj podstranice mijenja [3B]
+	
+	Urađeno.
+	
+	
+--------------------------------------------------------
+
+Notes:
+
+I  - Šta je urađeno?
+	
+	Navedeno iznad.
+	
+II  - Šta nije urađeno?
+	
+	Nije urađena galerija, navedeno iznad.
+	
+III - Bug-ovi koje ste primijetili ali niste stigli ispraviti, a znate rješenje (opis rješenja)
+	
+	/
+	
+IV  - Bug-ovi koje ste primijetili ali ne znate rješenje
+
+	/
+	
+V  - Lista fajlova u formatu NAZIVFAJLA - Opis u vidu jedne rečenice šta se u fajlu nalazi
+
+	src/css/user/companies.css - styles za Companies stranicu
+	src/css/user/jobopenings.css - styles za job openings stranicu
+	src/css/user/profile.css - styles za profile stranicu
+	src/css/fj-common.css - Common stilovi za stvari koje se mogu reusati na stranicama (u trenutku pisanja summarya su to button stilovi, panel i error panel i fullscreen slika)
+	src/css/grid-view.css - Grid view
+	src/css/login.css - styles za login stranicu
+	src/css/nav.css - styles za navigaciju (i desktop i tablet/phone verzija)
+	src/css/popup.css - styles za popup (koji je takodjer reusable ali ima stotinjak linija pa sam ga ubacio u drugi file). Koristi se na companies stranici
+	
+	src/img - testne slike, tu su samo da izgleda stranica "kako treba". Nakon uvodjenja servera i baze slike ce se povlaciti iz baze kao base64 vjerovatno (eventualno uploadovati na neki blob ili hosting i uzimati odozgo)
+	
+	src/js/login/login-vm.js - ViewModel za login stranicu
+	src/js/user/companies-vm.js - ViewModel za companies stranicu
+	src/js/user/profile-vm.js - ViewModel za profilnu stranicu
+	
+	src/js/fj-global-actions.js - ("fj" stoji za "Find a Job", najlogicniji prefix ovih fajlova) - helper funkcije i global constants (npr. Gender)
+	src/js/fj-library.js - sitna funkcija koja mi vraca wrappani DOM element, uz podrsku za value() funkciju (krace pisati), te podrsku za extendanje to elementa kroz drugi parametar (primjer je na profilnoj stranici, extendani su modeli sa isValid extenderima. Postoji komentar iznad metode)
+	src/js/fj-navigation.js - navigacija uz globalni model "vm" za koji se binda svaki viewmodel kada se navigira na neku stranicu, pa se u htmlu pise vm.nekiMember().
+	src/js/fj-resources.js - micromanagement :) ovdje se nalaze svi resources koji ce se koristiti na stranici, da ne bih u pola koda imao string greske i slicno
+	src/js/main.js - globalni event handleri i extenderi za DOM. Ovo ce se u buducnosti prebaciti u vlastiti ViewModel, samo sto nisam u ovoj spirali imao vremena da to zavrsim.

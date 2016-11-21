@@ -1,0 +1,63 @@
+/*BUTTON*/
+
+.fj-button {
+    display: inline-block !important;
+    background-color: #269dd1 !important;
+    color: white;
+    font-weight: 500;
+    padding: 7px 16px;
+    text-align: center;
+    border: none !important;
+    transition: background-color ease-in-out .2s !important;
+}
+
+.fj-button:hover {
+    background-color: #3b758e !important;
+    cursor: pointer;
+    transition: background-color ease-in-out .2s !important;
+}
+
+@media only screen and (max-width: 900px) {
+
+    .fj-button {
+        width: 100%;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+/*PANEL*/
+
+.fj-panel {
+    background-color: white;
+    font-size: 15px;
+    border: 1px solid #CCC;
+    border-radius: 7px;
+    padding: 10px;
+    display: none;
+}
+
+.fj-panel-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.fj-picture-fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: none; /*by default*/
+    align-items: center;
+}
+
+#fj-picture-fullscreen {
+    max-height: 96%;
+    max-width: 98%;
+    margin: 0 auto;
+}

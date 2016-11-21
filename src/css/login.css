@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,300);
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    background: #EEE; 
+    font: 300 14px 'Open Sans'; 
+    color: #444444; 
+}
+
+#login-label {
+    padding: 10px;
+    border-bottom: 1px solid #1f91c3;
+    font-weight: bold;
+}
+
+#login-wrapper {
+    background-color: white;
+    display: inline-block;
+    border: 1px solid #1f91c3;
+    margin: 0 auto;
+    border-radius: 3px;
+    width: 30%;
+    padding-bottom: 5px;
+}
+
+#login-username, #login-password {
+    padding: 10px;
+}
+
+.icon {
+    width: 20px;
+    display: inline-block;
+}
+
+#login-button {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 70px;
+}
+
+#login-info {
+    text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 5px;
+}
+
+@media only screen and (max-width: 900px) {
+    #login-button {
+        padding-left: 1%;
+        margin-left: 0px;
+        width: 98%;
+    }
+    
+    #login-wrapper {
+        width: 80%;
+    }
+}

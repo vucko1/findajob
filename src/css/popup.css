@@ -47,12 +47,54 @@
 }
 
 @media screen and (max-width: 700px){
-  .popup {
-    width: 80%;
-  }
+    .popup {
+        width: 80%;
+    }
+    
+    .popup-carousel-arrow {
+        display: none !important;;
+    }
 }
 
 .content {
 
     margin-top: 15px;
+}
+
+.popup-carousel-arrow {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background-color: rgba(0, 0, 0, .3);
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.popup-carousel-arrow:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.popup-carousel-arrow-left:hover .arrow,
+.popup-carousel-arrow-right:hover .arrow{
+    color: rgba(50, 50, 50, .3);
+}
+
+.popup-carousel-arrow-left {
+    left: 0;
+}
+
+.popup-carousel-arrow-right {
+    right: 0;
+}
+
+.popup-carousel-arrow .arrow {
+    color: rgba(0, 0, 0, .4);
+    font-size: 30vw;
+    margin-left: 20%;
+}
+
+.popup-carousel-arrow-right .arrow {
+    margin-left: 30% !important;
 }

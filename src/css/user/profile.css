@@ -66,7 +66,7 @@
 
 /*Custom styles for each field*/
 input[type=date] {
-    display: none;
+    
 }
 
 #pc-graduationyear {
@@ -100,4 +100,25 @@ input[type=file] {
 
 #pc-currentstatus {
     width: 100%;
+}
+
+.save-user-button {
+    margin-top: 1%;
+    width: 10%;
+    margin-left: 40%;
+}
+
+@media only screen and (max-width: 900px) {
+    .save-user-button {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+
+#pc-profilepic input {
+    width: 90%;
+}
+
+#pc-profilepic-preview:hover {
+    cursor: pointer;
 }
