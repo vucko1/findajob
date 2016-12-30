@@ -3,17 +3,27 @@ Spirala 3
 Koristeći PHP napravite serializaciju svih podataka u XML fajl/fajlove. Potrebno je da omogućite unos, izmjenu, prikazivanje i brisanje podataka. 
 Svi podaci koji se unose u XML fajl trebaju biti validirani (validacija i u PHP-u, ne samo JS). Takođe pazite na XSS ranjivost vašeg koda. 
 Unos, izmjenu i brisanje podataka može raditi samo admin korisnik. Zasada adminovi podaci (username i password) neka budu zapisani u XML fajlu.
+
+Podaci se loadaju iz XML-a. 
+Napravljen je save usera na profilu koji provjerava basic validaciju (data length i data type validacija će postojati sama od sebe kada napravim bazu tako da nisam htio zakucavati ovdje). XSS compliance nije urađen, biti će na sljedećoj spirali.
+Login i home nije urađen da radi preko xmla, ali biti će na sljedećoj spirali. Overkill je raditi ovo iz XML-a, stvarno nisam mogao... :)
+
 2.) [1 bod]
 Omogućite adminu download podataka (npr listu proizvoda sa cijenama) u obliku csv fajla.
 **************************************************************** 
 **** Podaci trebaju biti iz XML-a, a ne hardkodirani podaci ****
 ****************************************************************
+
+Urađeno na viewu "companies".
+
 3.) [2 boda]
 Napravite opciju generisanja izvještaja u obliku pdf fajla. Ovaj izvještaj može sadržavati bilo koje podatke koji imaju smisla za vašu temu.
 Možete koristiti fpdf biblioteku. 
 **************************************************************** 
 **** Podaci trebaju biti iz XML-a, a ne hardkodirani podaci ****
 ****************************************************************
+
+Nije urađeno.
 
 4.) [3 boda]
 Napravite opciju pretrage podataka sa prijedlozima. Dok korisnik upisuje vrijednost pretrage treba mu se prikazivati do deset najsličnijih stavki.
@@ -25,9 +35,4 @@ Kada korisnik pritisne na dugme pretraži trebaju se prikazati svi rezultati koj
 **** Podaci trebaju biti iz XML-a, a ne hardkodirani podaci ****
 ****************************************************************
 
-5.) [dodatni bod]
-Ukoliko uspješno napravite deployment vaše stranice na OpenShift https://developers.openshift.com dobit ćete dodatni bod. Ovaj zadatak će biti obavezan za sve studente od sljedeće spirale.
-
-
-NAPOMENA: Obavezno napišite ReadMe kao za prethodne spirale
-Rok za predaju treće spirale je tri sedmice od termina Vježbe 6 (PHP).
+Urađeno na company viewu. Filter je na "Name" i "Orientation" fieldovima.
