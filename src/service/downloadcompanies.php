@@ -19,6 +19,14 @@ if (file_exists($file)) {
     }
 	
     fclose($f);
+	
+	header($_SERVER["SERVER_PROTOCOL"] . " 200 OK");
+	header("Cache-Control: public"); // needed for internet explorer
+	header("Content-Type: application/zip");
+	header("Content-Transfer-Encoding: Binary");
+	header("Content-Length:".filesize('companies.csv'));
+	header("Content-Disposition: attachment; filename=companies.csv");
+	readfile('companies.csv');
 }
 
 ?>

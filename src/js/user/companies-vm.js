@@ -42,7 +42,7 @@ FJ.ViewModels.Companies = function() {
 			totalNumberOfCompanies = companies.length - 1;
 		}, function (err) { });
 	}
-	
+
 	var generateNewTableRowForCompany = function(company, id) {
 		var companies = document.getElementById('companies').getElementsByTagName('tbody')[0];
 		
