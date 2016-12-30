@@ -17,7 +17,7 @@ fj.observable = function(idSelector, extraProperties) {
             value: function(val) {
                 DOMelement = document.getElementById(idSelector);
                 
-                if (!FJ.IsUndefinedOrNull(val))
+                if (!FJ.IsUndefinedOrNullOrEmpty(val))
                     DOMelement.value = val;
                 
                 return DOMelement.value;

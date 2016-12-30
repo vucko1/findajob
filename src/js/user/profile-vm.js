@@ -77,14 +77,45 @@ FJ.ViewModels.UserProfile = function() {
         userModel = userModelResult;
     }
     
+	var getUserProfile = function() {
+		FJ.DAL.User.GetProfile(function(resp) {
+			var data = JSON.parse(resp.response);
+			
+			// set data
+			userModel.basicInfo.firstName.value(data.basicInfo.firstName);
+			userModel.basicInfo.lastName.value(data.basicInfo.lastName);
+			userModel.basicInfo.dateOfBirth.value(data.basicInfo.dateOfBirth);
+			userModel.basicInfo.country.value(data.basicInfo.country);
+			userModel.basicInfo.city.value(data.basicInfo.city);
+			userModel.basicInfo.email.value(data.basicInfo.email);
+
+			userModel.profession.college.value(data.profession.college);
+			userModel.profession.graduationYear.value(data.profession.graduationYear);
+			
+			if (!FJ.IsObjectEmpty(data.profession.title))
+				userModel.profession.title.value(data.profession.title);
+			
+			userModel.profession.status.value(data.profession.status);
+			userModel.profession.profession.value(data.profession.profession);
+			
+		}, function(resp) {
+			FJ.Panel.ShowMessages(errorPanel, [ "An error ocurred while fetching user data, please try again." ]);
+		});
+	}
+	
     // INIT
     initControls();
-
+	getUserProfile();
+	
     self.saveUserProfileChanges = function() {
         var validationResult = validateUserProfile();
 
         if (validationResult) {
-            // save user changes
+            FJ.DAL.User.SaveProfile(userModel, function (resp) {
+				console.log(resp.response);
+			}, function (resp) {
+				
+			});
         }
         else {
 

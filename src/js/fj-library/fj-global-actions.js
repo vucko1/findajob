@@ -11,6 +11,10 @@ FJ.IsUndefinedOrNullOrEmpty = function(element) {
     return element === undefined || element === null || element === "";
 };
 
+FJ.IsObjectEmpty = function(obj) {
+	return Object.keys(obj).length === 0 && obj.constructor === Object;
+};
+
 FJ.ContainsNumber = function(str) {
     return /[0-9]/.test(str);
 };

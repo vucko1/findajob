@@ -4,7 +4,8 @@ table, th, td {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    margin-top: 10px;
+	width: 100%;
 }
 
 table thead {
@@ -39,4 +40,8 @@ tbody tr:hover {
 
 .description {
     display: none;
+}
+
+#company-filter {
+	width: 150px;
 }

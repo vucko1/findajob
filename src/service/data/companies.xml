@@ -1,0 +1,34 @@
+<companies>
+	<company>
+		<name>Authority Partners</name>
+		<place>Bosnia and Herzegovina, USA</place>
+		<orientation>Software consulting</orientation>
+		<noOfEmployees>> 250</noOfEmployees>
+		<noOfJobOpenings>6</noOfJobOpenings>
+		<description>NEKI DESC ZA API</description>
+	</company>
+	<company>
+		<name>Microsoft BA</name>
+		<place>Bosnia and Herzegovina</place>
+		<orientation>Hardware, Software, OS, Cloud Computing</orientation>
+		<noOfEmployees>> 200</noOfEmployees>
+		<noOfJobOpenings>0</noOfJobOpenings>
+		<description>NEKI DESC ZA MICROSOFT BA</description>
+	</company>
+	<company>
+		<name>Apple</name>
+		<place>Bosnia and Herzegovina, USA</place>
+		<orientation>Hardware, Software</orientation>
+		<noOfEmployees>> 10k</noOfEmployees>
+		<noOfJobOpenings>1</noOfJobOpenings>
+		<description>NEKI DESC ZA APPLE</description>
+	</company>
+	<company>
+		<name>Konzum</name>
+		<place>Bosnia and Herzegovina, Croatia, Serbia</place>
+		<orientation>Shop</orientation>
+		<noOfEmployees>> 500</noOfEmployees>
+		<noOfJobOpenings>10</noOfJobOpenings>
+		<description>NEKI DESC ZA KONZUM</description>
+	</company>
+</companies>
