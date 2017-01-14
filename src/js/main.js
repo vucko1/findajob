@@ -1,6 +1,9 @@
 window.onload = function() {
-    // redirect to job openings on init
-    FJ.Navigation.NavigateToRoute(FJ.Navigation.Routes.User.JobOpenings);
+    // redirect to job openings or my jobs (whether user or company is logged in)
+    if (document.getElementById("default-opened-site").value == 1)
+		FJ.Navigation.NavigateToRoute(FJ.Navigation.Routes.Company.MyJobs);
+	else
+		FJ.Navigation.NavigateToRoute(FJ.Navigation.Routes.User.JobOpenings);
 }
 
 // HTML DOM element members (expand the DOM API with basic functions since we're not allowed to use jQuery :). )
@@ -35,5 +38,56 @@ function collapseExpand() {
 }
 
 function logout() {
-    window.location.pathname = "/login.html"
+    window.location.href = "logout.php"
+}
+
+function toggleBookmark(jobId, action, element) {
+	FJ.DAL.User.ToggleBookmark({
+		job_id: jobId,
+		action: action
+	}, function (resp) {
+		if (action == 1) {
+			element.removeClass("not-starred");
+			element.addClass("starred");
+		}
+		else {
+			element.removeClass("starred");
+			element.addClass("not-starred");
+		}
+	}, function (resp) {
+		
+	});
+}
+
+function saveCompany() {
+	FJ.DAL.Company.SaveCompany({
+		name: document.getElementById("pc-name").value,
+		place: document.getElementById("pc-place").value,
+		orientation: document.getElementById("pc-orientation").value,
+		description: document.getElementById("pc-description").value,
+		noofemployees: document.getElementById("pc-noofemployees").value,
+	}, function (resp) {
+		
+	}, function (resp) {
+		
+	});
+}
+
+function createNewJob() {
+	FJ.DAL.Company.NewJob({
+		title: document.getElementById("pc-title").value,
+		description: document.getElementById("pc-description").value,
+	}, function (resp) {
+		
+	}, function (resp) {
+		
+	});
+}
+
+function deleteJob(id) {
+	FJ.DAL.Company.DeleteJob(id, function (resp) {
+		
+	}, function (resp) {
+		
+	});
 }

@@ -7,8 +7,13 @@ vm = null;
 
 FJ.Navigation.Routes = {
     User: {
+		Bookmarks: {
+			Route: "user/bookmarks.php",
+            MenuItem: "menu-list-bookmarks",
+            Title: FJ.Resources.Navigation.Title.User.Bookmarks
+		},
         JobOpenings: {
-            Route: "user/jobopenings.html",
+            Route: "user/jobopenings.php",
             MenuItem: "menu-list-jobopenings",
             Title: FJ.Resources.Navigation.Title.User.JobOpenings
         },
@@ -23,6 +28,23 @@ FJ.Navigation.Routes = {
             Title: FJ.Resources.Navigation.Title.User.Companies
         }
     },
+	Company: {
+		MyCompany: {
+			Route: "company/mycompany.php",
+            MenuItem: "menu-list-mycompany",
+            Title: FJ.Resources.Navigation.Title.Company.MyCompany
+		},
+		NewJob: {
+			Route: "company/newjob.php",
+            MenuItem: "menu-list-newjob",
+            Title: FJ.Resources.Navigation.Title.Company.NewJob
+		},
+		MyJobs: {
+			Route: "company/myjobs.php",
+            MenuItem: "menu-list-myjobs",
+            Title: FJ.Resources.Navigation.Title.Company.MyJobs
+		}
+	},
     Login: {
         Route: "../login.html",
         Title: FJ.Resources.Navigation.Title.Login

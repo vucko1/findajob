@@ -3,6 +3,7 @@ FJ.Resources = FJ.Resources || {};
 FJ.Resources.Navigation = FJ.Resources.Navigation || {};
 FJ.Resources.Navigation.Title = FJ.Resources.Navigation.Title || {};
 FJ.Resources.Navigation.Title.User = FJ.Resources.Navigation.Title.User || {};
+FJ.Resources.Navigation.Title.Company = FJ.Resources.Navigation.Title.Company || {};
 FJ.Resources.User = FJ.Resources.User || {};
 FJ.Resources.User.Validation = FJ.Resources.User.Validation || {};
 
@@ -13,6 +14,9 @@ FJ.Resources.Navigation.Title.User.Companies = "Find a Job - Search companies";
 FJ.Resources.Navigation.Title.User.JobOpenings = "Find a Job - Job openings";
 FJ.Resources.Navigation.Title.User.Bookmarks = "Find a Job - My bookmarks";
 FJ.Resources.Navigation.Title.Login = "Find a Job - Login";
+FJ.Resources.Navigation.Title.Company.MyCompany = "Find a Job - My company";
+FJ.Resources.Navigation.Title.Company.NewJob = "Find a Job - New Job";
+FJ.Resources.Navigation.Title.Company.MyJobs = "Find a Job - My Jobs";
 
 //VALIDATION MESSAGES
 FJ.Resources.User.Validation.FirstNameMessage = "First name cannot be empty and it must not contain numbers.";

@@ -11,7 +11,8 @@ FJ.ViewModels.UserProfile = function() {
             picture: document.getElementById("fj-picture-fullscreen")
         },
         allowedExtensions = [ "jpg", "jpeg", "gif", "png" ],
-        openPreviewPicture = null;
+        openPreviewPicture = null,
+		userProfilePicture = null;
  
     var initControls = function() {
         
@@ -37,14 +38,19 @@ FJ.ViewModels.UserProfile = function() {
             city: fj.observable('pc-city', canNotContainNumbersExtender),
             email: fj.observable('pc-email', {
                 isValid: function(emailElement) {
-                    return /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(emailElement.value())
+                    return /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$/.test(emailElement.value())
                 }
             }),
             profilePicture: fj.observable('pc-profilepic-input', {
                 files: function(picElement) {
                     return picElement.DOM().files;
                 }  
-            })
+            }),
+			gender: fj.observable('pc-gender', {
+				selected: function() {
+					return document.querySelector('input[name="gender"]:checked').value;
+				}
+			})
         };
         
         var userProfession = {
@@ -60,11 +66,7 @@ FJ.ViewModels.UserProfile = function() {
             newPassword: fj.observable('pc-newpassword', isNotUndefinedOrNullOrEmptyExtender),
             newPasswordRepeat: fj.observable('pc-repeatnewpassword', isNotUndefinedOrNullOrEmptyExtender)
         };
-        
-        // gender
-        // resume
-        // profile pic
-        
+
         var skills = {};
         
         var userModelResult = {
@@ -82,22 +84,22 @@ FJ.ViewModels.UserProfile = function() {
 			var data = JSON.parse(resp.response);
 			
 			// set data
-			userModel.basicInfo.firstName.value(data.basicInfo.firstName);
-			userModel.basicInfo.lastName.value(data.basicInfo.lastName);
-			userModel.basicInfo.dateOfBirth.value(data.basicInfo.dateOfBirth);
-			userModel.basicInfo.country.value(data.basicInfo.country);
-			userModel.basicInfo.city.value(data.basicInfo.city);
-			userModel.basicInfo.email.value(data.basicInfo.email);
-
-			userModel.profession.college.value(data.profession.college);
-			userModel.profession.graduationYear.value(data.profession.graduationYear);
+			userModel.basicInfo.firstName.value(data.firstname);
+			userModel.basicInfo.lastName.value(data.lastname);
+			userModel.basicInfo.dateOfBirth.value(data.dateofbirth);
+			userModel.basicInfo.country.value(data.country);
+			userModel.basicInfo.city.value(data.city);
+			userModel.basicInfo.email.value(data.email);
+			userModel.profession.college.value(data.college);
+			userModel.profession.graduationYear.value(data.graduationyear);
+			userModel.profession.title.value(data.title);
+			userModel.profession.status.value(data.status_id);
+			userModel.profession.profession.value(data.profession);
 			
-			if (!FJ.IsObjectEmpty(data.profession.title))
-				userModel.profession.title.value(data.profession.title);
+			var id = data.gender === 1 ? "pc-gender-male" : "pc-gender-female";
+			document.getElementById(id).checked = true;
 			
-			userModel.profession.status.value(data.profession.status);
-			userModel.profession.profession.value(data.profession.profession);
-			
+			userProfilePicture = data.profilepicture;
 		}, function(resp) {
 			FJ.Panel.ShowMessages(errorPanel, [ "An error ocurred while fetching user data, please try again." ]);
 		});
@@ -111,10 +113,12 @@ FJ.ViewModels.UserProfile = function() {
         var validationResult = validateUserProfile();
 
         if (validationResult) {
+			userModel.profilePicture = userProfilePicture;
+			
             FJ.DAL.User.SaveProfile(userModel, function (resp) {
-				console.log(resp.response);
+				FJ.Panel.Hide(errorPanel);
 			}, function (resp) {
-				
+				FJ.Panel.ShowMessages(errorPanel, JSON.parse(resp.response));
 			});
         }
         else {
@@ -136,6 +140,7 @@ FJ.ViewModels.UserProfile = function() {
             
             reader.onload = function(e) {
                 fullscreenModal.picture.src = e.target.result;
+				userProfilePicture = e.target.result;
             };
             
             reader.readAsDataURL(files[0]);

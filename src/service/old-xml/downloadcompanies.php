@@ -1,10 +1,4 @@
 <?php
-require_once('./contracts/user.php');
-require_once('./contracts/userprofile.php');
-include('./helpers/db.php');
-
-session_start();
-$user = $_SESSION['user'];
 
 $file='data/companies.xml';
 

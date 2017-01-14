@@ -22,8 +22,8 @@
 
                 <div class="profile-control">
                     <form id="pc-gender">
-                        <input type="radio" name="gender" value="male" id="pc-gender-male"> Male
-                        <input type="radio" name="gender" value="female" id="pc-gender-female"> Female
+                        <input type="radio" name="gender" value="1" id="pc-gender-male"> Male
+                        <input type="radio" name="gender" value="2" id="pc-gender-female"> Female
                     </form>
                 </div>
 
@@ -58,10 +58,10 @@
                 <input class="profile-control" type="number" id="pc-graduationyear" min="1900" max="2100" placeholder="2016" />
                 <input class="profile-control" type="text" id="pc-title" />
                 <select class="profile-control" id="pc-currentstatus">
-                    <option>Student</option>
-                    <option>Employed</option>
-                    <option>Unemployed, looking for a job</option>
-                    <option>Employed, but weighning my options</option>
+                    <option value="1">Student</option>
+                    <option value="2">Employed</option>
+                    <option value="3">Unemployed, looking for a job</option>
+                    <option value="4">Employed, but weighning my options</option>
                 </select>
                 <input class="profile-control" type="text" id="pc-profession" />
             </div>
@@ -112,3 +112,7 @@
 <div class="fj-picture-fullscreen">
     <img id="fj-picture-fullscreen" />
 </div>
+
+<script>
+    js_variable1 = '<?php echo json_encode(get_object_vars($userprofile)) ?>';
+</script>

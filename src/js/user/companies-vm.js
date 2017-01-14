@@ -79,7 +79,7 @@ FJ.ViewModels.Companies = function() {
     
 	var getCompanies = function() {
 		FJ.DAL.User.GetCompanies(function(resp) {
-			var companies = JSON.parse(resp.response).company;
+			var companies = JSON.parse(resp.response);
 				
 			for (var i = 0; i < companies.length; i ++)
 				generateNewTableRowForCompany(companies[i], i);
