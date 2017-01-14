@@ -1,6 +1,6 @@
 var FJ = FJ || {};
 FJ.Http = FJ.Http || {};
-FJ.Http.BaseUri = FJ.Http.BaseUri || "http://localhost:8080/wtproj/service/";
+FJ.Http.BaseUri = FJ.Http.BaseUri || "http://findajob-findajob.44fs.preview.openshiftapps.com/wtproj/service/";
 
 // makes GET request on specified uri. In case of 200 invokes successCallback, in any other case errorCallback is invoked
 FJ.Http.Get = function(uri, successCallback, errorCallback) {
