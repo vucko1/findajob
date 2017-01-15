@@ -7,7 +7,7 @@
 
 	$db = connect();
 
-	$query = $db->prepare("SELECT j.*, ( SELECT COUNT(*) FROM User_job_favourite uj WHERE uj.job_id = j.id ) AS 'popularity' FROM job j WHERE j.company_id = ?");
+	$query = $db->prepare("SELECT j.*, ( SELECT COUNT(*) FROM user_job_favourite uj WHERE uj.job_id = j.id ) AS 'popularity' FROM job j WHERE j.company_id = ?");
 						   
 	$query->bind_param("i", $user->company_id);
 

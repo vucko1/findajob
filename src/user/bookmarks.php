@@ -9,7 +9,7 @@ $user = $_SESSION["user"];
 $db = connect();
 
 $query = $db->prepare("SELECT j.id, j.description AS 'jobdescription', j.title, c.name
-						FROM Job j
+						FROM job j
 						INNER JOIN company c ON j.company_id = c.id
 						INNER JOIN user_job_favourite uj ON uj.job_id = j.id
 						WHERE uj.user_id = ?");

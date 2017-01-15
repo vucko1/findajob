@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$data = json_decode($json,false);
 	
 	
-	$query = $db->prepare('INSERT INTO Job (company_id, description, title)
+	$query = $db->prepare('INSERT INTO job (company_id, description, title)
 							VALUES (?, ?, ?)');
 	
 	$query->bind_param('iss', $user->company_id, $data->description, $data->title);

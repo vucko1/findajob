@@ -9,7 +9,7 @@ $user = $_SESSION["user"];
 $db = connect();
 
 $query = $db->prepare("SELECT j.id, j.description AS 'jobdescription', j.title, c.name, EXISTS (SELECT * FROM user_job_favourite uj WHERE uj.user_id = ? AND uj.job_id = j.id) AS 'Bookmarked'
-FROM Job j
+FROM job j
 INNER JOIN company c ON j.company_id = c.id");
 					   
 $query->bind_param("i", $user->id);
